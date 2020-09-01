@@ -1,4 +1,4 @@
-package academy.devdojo.youtube.course.model;
+package academy.devdojo.youtube.core.model;
 
 import lombok.*;
 
@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Course implements AbstractEntity{
+public class Course implements AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
