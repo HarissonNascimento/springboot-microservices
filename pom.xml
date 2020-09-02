@@ -13,16 +13,23 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-<!--    <properties>-->
-<!--        <java.version>14</java.version>-->
-<!--    </properties>-->
-
     <modules>
         <module>course</module>
         <module>core</module>
+        <module>discovery</module>
+        <module>gateway</module>
     </modules>
 
+    <properties>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+    </properties>
+
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -75,4 +82,16 @@
         </dependency>
 
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
