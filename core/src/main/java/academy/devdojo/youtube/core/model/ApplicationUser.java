@@ -20,9 +20,10 @@ public class ApplicationUser implements AbstractEntity {
     private Long id;
     @NotNull(message = "Thi field 'username' is mandatory")
     @Column(nullable = false)
-    private String userName;
+    private String username;
     @NotNull(message = "Thi field 'password' is mandatory")
     @Column(nullable = false)
+    @ToString.Exclude
     private String password;
     @NotNull(message = "Thi field 'role' is mandatory")
     @Column(nullable = false)
@@ -30,7 +31,7 @@ public class ApplicationUser implements AbstractEntity {
 
     public ApplicationUser(@NotNull ApplicationUser applicationUser) {
         this.id = applicationUser.getId();
-        this.userName = applicationUser.getUserName();
+        this.username = applicationUser.getUsername();
         this.password = applicationUser.getPassword();
         this.role = applicationUser.getRole();
     }
