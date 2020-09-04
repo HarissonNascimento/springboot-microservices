@@ -7,7 +7,6 @@ import com.nimbusds.jwt.SignedJWT;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -26,6 +25,7 @@ public class JwtTokenAuthorizationFilter extends OncePerRequestFilter {
     protected final JwtConfiguration jwtConfiguration;
     protected final TokenConverter tokenConverter;
     @Override
+    @SuppressWarnings("Duplicates")
     protected void doFilterInternal(@NonNull HttpServletRequest request,@NonNull HttpServletResponse response,@NonNull FilterChain filterChain) throws ServletException, IOException {
         String header = request.getHeader(jwtConfiguration.getHeader().getName());
 
